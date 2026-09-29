@@ -331,6 +331,17 @@ select {
   gap: 5px;
 }
 
+/*.team-list {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  background-color: none;
+  transition: background-color 0.2s;
+}/*
+
 /* Team card colors */
 .team-card.water {
   background-color: #e8f7fc;

@@ -5,6 +5,7 @@ const teamSelect = document.getElementById("teamSelect");
 const attending = document.getElementById("attendeeCount");
 const greet = document.getElementById('greeting');
 const success = document.getElementsByClassName("success-message");
+const data = localStorage.getItem("progressBar","count", "teamCounter", "attending");
 //const teamList =document.querySelector("team-list");
 
 // Track Attendance
@@ -59,6 +60,9 @@ form.addEventListener("submit", function(event) {
     console.log (message);
     greet.textContent = (message);
     greet.style.display= "inline-block";
+
+    //Store data
+    localStorage.setItem("progressBar","count", "teamCounter", "attending");
 
     form.reset();
 });

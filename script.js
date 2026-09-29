@@ -3,6 +3,8 @@ const form = document.getElementById("checkInForm");
 const nameInput = document.getElementById("attendeeName");
 const teamSelect = document.getElementById("teamSelect");
 const attending = document.getElementById("attendeeCount");
+const greet = document.getElementById('greeting');
+const success = document.getElementsByClassName("success-message");
 //const teamList =document.querySelector("team-list");
 
 // Track Attendance
@@ -21,8 +23,10 @@ form.addEventListener("submit", function(event) {
     console.log(name, teamName);
 
     //Increment count
-    count++
-    console.log("Total Check-ins: ", count);
+    if (count < 51) {
+        count++;
+        console.log("Total Check-ins: ", count);
+    }
 
     //Update progress bar
     const percentage = Math.round((count / maxCount) * 100) + "%";
@@ -31,23 +35,30 @@ form.addEventListener("submit", function(event) {
 
     progressBar.style.width = percentage;
 
-    attending.textContent = parseInt(attending.textContent) + 1;
+    if (count < 51){
+        attending.textContent = parseInt(attending.textContent) + 1;
+    }
 
     //Update team counter
     const teamCounter = document.getElementById(team + "Count");
-    teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
+     
+    if (attending.textContent, count < 51){
+        teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
+     }
 
     //adding team names below
-    //for(let i=0; i < teamList.length; i++) {
-        //const ul = document.createElement("ul");
+    //while(i <= teamList.length) {
+        //i++
         //li.textContent = teamList[i];
         //teamList.appendChild(li);
-    //};
+    //}
 
     //Show Welcome message
-    //const success = document.getElementsByClassName("success-message");
+    //
     const message= `Welcome, ${name} from ${teamName}!`;
-    console.log(message);
+    console.log (message);
+    greet.textContent = (message);
+    greet.style.display= "inline-block";
 
     form.reset();
 });

@@ -256,6 +256,11 @@ button .fas {
 .success-message {
   background-color: #e8f4fc;
   color: #003c71;
+  padding: 16px 20px;
+  border-radius: 8px;
+  color: #333;
+  margin-bottom: 15px;
+  display: none;
 }
 
 /* Counter */
@@ -340,7 +345,7 @@ select {
   padding: 16px 20px;
   background-color: none;
   transition: background-color 0.2s;
-}/*
+}
 
 /* Team card colors */
 .team-card.water {

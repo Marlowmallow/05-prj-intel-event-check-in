@@ -2,6 +2,7 @@
 const form = document.getElementById("checkInForm");
 const nameInput = document.getElementById("attendeeName");
 const teamSelect = document.getElementById("teamSelect");
+const attending = document.getElementById("attendeeCount");
 
 // Track Attendance
 let count = 0;
@@ -25,11 +26,19 @@ form.addEventListener("submit", function(event) {
     //Update progress bar
     const percentage = Math.round((count / maxCount) * 100) + "%";
     console.log(`Progress: ${percentage}`);
+    const progressBar = document.getElementById("progressBar");
 
+    //function updateProgress(progress) {
+    progressBar.style.width = percentage;
+
+    attending.textContent = parseInt(attending.textContent) + 1;
 
     //Update team counter
     const teamCounter = document.getElementById(team + "Count");
     teamCounter.textContent = parseInt(teamCounter.textContent) + 1;
+    //var waterList =[""];
+    //var zeroList =[""];
+    //var renewList =[""];
 
     //Show Welcome message
     const message= `Welcome, ${name} from ${teamName}!`;
